@@ -1,0 +1,13 @@
+<%= form_for(@tweet, url: choose_new_or_edit) do |f| %>
+  <% if @tweet.errors.any? %>
+    <p>1文字以上140文字以下でつぶやいてください！</p>
+  <% end %>
+
+  <%= f.label "つぶやく" %>
+  <br>
+  <%= f.text_field :content, class: 'form-control' %>
+  <br>
+  <%= f.submit "投稿", class: 'btn btn-primary btn-block' %>
+<% end %>
+
+<%= link_to "つぶやき一覧へ", tweets_path %>

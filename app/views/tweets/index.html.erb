@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+    <p><%= notice %></p>
+    <h1>つぶやき一覧</h1>
+    <%= link_to "新しくつぶやく", new_tweet_path, class: 'btn btn-default' %>
+    <% @tweets.reverse_each do |tweet| %>
+      <div class="row">
+        <p><%= tweet.content %></p>
+        <%= link_to "つぶやき編集", edit_tweet_path(tweet.id),
+          class: 'btn btn-default btn-sm btn-success' %>
+        <%= link_to "つぶやき削除", tweet_path(tweet.id), method: :delete,
+          data: {confirm: '本当に削除してよいですか？'},
+          class: 'btn btn-default btn-sm btn-danger' %>
+      </div>
+    <% end %>
+  </div>
+  <div id="page-top-btn2" class="page-top-btn2">
+    <p><a class="move-page-top2" id="move-page-top2">▲</a></p>
+  </div>
+</div>
