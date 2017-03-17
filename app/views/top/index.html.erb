@@ -1,54 +1,20 @@
-<section class="main-header">
-    <img src="<%= asset_path "achieve.png"%>">
-</section>
-<section class="about">
-  <h1>DIVE07_EXAM1</h1>
-  <h3>以下の要件を全て満たしていた場合のみ、合格とします。</h3>
-  <ul>
-    <li>HTML,CSS,Bootstrapを使用して、現実のTwitterに似せたデザインにすること</li>
-    <li>tweetの投稿・投稿確認・編集・一覧表示・削除機能があること</li>
-    <li>1文字以上140文字以下しかつぶやけないようにすること</li>
-    <li>140文字より多い文字数、または内容が空で登録した場合エラーメッセージがでるようにすること</li>
-    <li>tweetsテーブルは、本文（content）のみカラムを有すること（id,timestampはデフォルトで生成されるのでそのままで良い）</li>
-    <li>Githubにソースコードを送信し、そのリポジトリのURLを提出すること</li>
-    <li>Herokuにアップロードしてある状態であること</li>
-  </ul>
-  <h3><%= link_to "つぶやき一覧へ", tweets_path %></h3>
-  <h3><%= link_to "新しくつぶやく", new_tweet_path %></h3>
-</section>
-<section class="function container-fruid">
-  <div class="row">
-    <h1>Function</h1>
-    <div class="function-images">
-      <div class="col-md-3 col-sm-6">
-        <div class="function-image">
-          <img src="<%= asset_path "key.png" %>">
-          <p>ログイン機能</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="function-image">
-          <img src="<%= asset_path "mails.png" %>">
-          <p>メール送信機能</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="function-image">
-          <img src="<%= asset_path "girls.png" %>">
-          <p>友達つながり機能</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="function-image">
-          <img src="<%= asset_path "comment.png" %>">
-          <p>コメント投稿機能</p>
-        </div>
-      </div>
-    </div>
+<section class="top-login container">
+  <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+    <h1>「いま」を見つけよう</h1>
+    <%= form_tag(controller: "top") do %>
+      <p>メールアドレス</p>
+      <p><%= email_field_tag :mail %></p>
+      <p>パスワード</p>
+      <p><%= password_field_tag :password %></p>
+      <p><%= submit_tag "ログイン", class: 'btn btn-default' %></p>
+    <% end %>
   </div>
-  <div id="page-top-btn" class="page-top-btn">
-    <p><a class="move-page-top" id="move-page-top">▲</a></p>
-  </div>
+
 </section>
+
+<div id="page-top-btn" class="page-top-btn">
+  <p><a class="move-page-top" id="move-page-top">▲</a></p>
+</div>
+
 
 
